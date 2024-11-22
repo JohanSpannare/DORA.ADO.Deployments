@@ -1,0 +1,236 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_MSSQL",
+      "label": "mssql",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "mssql",
+      "pluginName": "Microsoft SQL Server"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.2.3"
+    },
+    {
+      "type": "datasource",
+      "id": "mssql",
+      "name": "Microsoft SQL Server",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "mssql",
+        "uid": "${DS_MSSQL}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 30,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 1,
+      "interval": "1M/M",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "dataset": "Velocity",
+          "datasource": {
+            "type": "mssql",
+            "uid": "${DS_MSSQL}"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time = DATEADD(MONTH, DATEDIFF(MONTH, 0, deploymenttime), 0),\r\n  COUNT(environment) as deployments,\r\n  environment,\r\n  teamname\r\nFROM\r\n  Velocity.dbo.Deployments \r\nWHERE $__timeFilter(deploymenttime) and environment in (${environments:sqlstring}) and teamname in (${teams:sqlstring})\r\nGROUP BY\r\n  DATEADD(MONTH, DATEDIFF(MONTH, 0, deploymenttime), 0),\r\n  environment,\r\n  teamname\r\norder by time",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "timeShift": "1M/M",
+      "title": "Deployments by team",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": ".*environment=\\\"([a-zA-z0-9-]+)\\\".*teamname=\"([a-zA-z0-9-]+.*)\".*",
+            "renamePattern": "$2 ($1)"
+          }
+        }
+      ],
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "mssql",
+          "uid": "${DS_MSSQL}"
+        },
+        "definition": "select environment from Deployments group by environment order by environment",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "environments",
+        "options": [],
+        "query": "select environment from Deployments group by environment order by environment",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "mssql",
+          "uid": "${DS_MSSQL}"
+        },
+        "definition": "select teamname from Deployments group by teamname order by teamname",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "teams",
+        "options": [],
+        "query": "select teamname from Deployments group by teamname order by teamname",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1y",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Deployments",
+  "uid": "d3f33027-9b81-4485-b02e-81e9e7a61e0a",
+  "version": 11,
+  "weekStart": ""
+}

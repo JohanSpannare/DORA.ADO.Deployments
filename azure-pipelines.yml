@@ -1,0 +1,82 @@
+trigger:
+ branches:
+   include:
+     - '*'
+ paths:
+   exclude:
+     - azure-pipelines*.yml
+
+variables:
+  buildConfiguration: 'Release'
+  subscriptionId: 'a26e9cb1-a78d-4ce7-a5de-855e35c7dd36'
+  resourceGroup: 'rg-ado-server-dev01'
+  location: 'West Europe'
+  azureConnection: 'rg-ado-server-dev01'
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: build
+    displayName: Build
+    jobs:
+      - job: build
+        steps:
+          - task: DotNetCoreCLI@2
+            displayName: Restore
+            inputs:
+              command: 'restore'
+              feedsToUse: 'config'
+              nugetConfigPath: 'nuget.config'
+          - task: DotNetCoreCLI@2
+            displayName: Build
+            inputs:
+              command: 'build'
+              arguments: '--configuration $(buildConfiguration)'
+          - task: DotNetCoreCLI@2
+            displayName: Test
+            inputs:
+              command: 'test'
+              arguments: '--configuration $(buildConfiguration) --collect "XPlat Code Coverage"'
+          - task: reportgenerator@5
+            inputs:
+              reports: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+              targetdir: '$(Agent.TempDirectory)/CoverageResults'
+              publishCodeCoverageResults: true
+
+          - task: DotNetCoreCLI@2
+            displayName: Publish
+            inputs:
+              command: 'publish'
+              publishWebProjects: true
+              workingDirectory: '$(Build.ArtifactStagingDirectory)'
+              arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
+
+      - job: bicep
+        steps:
+          - task: AzureResourceManagerTemplateDeployment@3
+            name: RunPreflightValidation
+            displayName: Run preflight validation
+            inputs:
+              connectedServiceName: $(azureConnection)
+              location: $(location)
+              deploymentMode: Validation
+              resourceGroupName: $(resourceGroup)
+              csmFile: infrastructure/main.bicep
+
+          - task: CopyFiles@2
+            inputs:
+              SourceFolder: '$(Build.SourcesDirectory)/infrastructure'
+              Contents: '**'
+              TargetFolder: '$(Build.ArtifactStagingDirectory)/infrastructure'
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'

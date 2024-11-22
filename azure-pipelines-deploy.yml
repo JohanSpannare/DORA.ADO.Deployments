@@ -1,0 +1,97 @@
+resources:
+  repositories:
+    - repository: self
+      trigger: none
+  pipelines:
+    - pipeline: deployment
+      source: deployments-ci
+      trigger:
+        branches:
+          include:
+            - master
+
+
+variables:
+  buildConfiguration: 'Release'
+  subscriptionId: 'a26e9cb1-a78d-4ce7-a5de-855e35c7dd36'
+  resourceGroup: 'rg-ado-server-dev01'
+  location: 'West Europe'
+  azureConnection: 'rg-ado-server-dev01'
+  ApplicationInsights.ConnectionString: '$(ApplicationInsights--ConnectionString)'
+  
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: development
+    displayName: Deploy to development
+    condition: succeeded()
+    variables:
+      buildConfiguration: 'Release'
+      subscriptionId: 'a26e9cb1-a78d-4ce7-a5de-855e35c7dd36'
+      resourceGroup: 'rg-ado-server-dev01'
+      location: 'West Europe'
+      azureConnection: 'rg-ado-server-dev01'
+      webApp: ado-webapp-dev
+    jobs:
+      - deployment: development
+        displayName: development
+        pool:
+          name: Tryg-hosted-agent-pool
+            
+        environment: development
+        workspace:
+          clean: all
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureResourceManagerTemplateDeployment@3
+                  displayName: Deploy ARM Template
+                  inputs:
+                    deploymentScope: Resource Group
+                    azureResourceManagerConnection: $(azureConnection)
+                    subscriptionId: $(subscriptionId)
+                    action: Create Or Update Resource Group
+                    resourceGroupName: $(resourceGroup)
+                    location: $(location)
+                    templateLocation: Linked artifact
+                    csmFile: $(Pipeline.Workspace)/deployment/drop/infrastructure/main.bicep
+                    overrideParameters: >
+                      -vnetName vnet-weu-ado-server-non-prod
+                      -subnetName sb-weu-ado-server-dev01
+                      -vnetResourceGroup rg-weu-nw-ado-server-nonprod
+                      -keyVaultName kv-ado-server-nonprod
+                      -dnsZoneSubscriptionId  079c18fd-b130-4cc7-b3f3-8582636bccef
+                      -dnsZoneResourceGroupName rg_weu-pvt-dns
+                    deploymentMode: Incremental
+
+                - task: AzureKeyVault@2
+                  inputs:
+                    azureSubscription: 'rg-ado-server-dev01'
+                    KeyVaultName: 'kv-ado-server-nonprod'
+                    SecretsFilter: '*'
+                    RunAsPreJob: false
+
+                - task: AzureRmWebAppDeployment@4
+                  displayName: Deploy Web App
+                  inputs:
+                    azureSubscription: $(azureConnection)
+                    ResourceGroupName: $(resourceGroup)
+                    appType: 'webApp'
+                    WebAppName: '$(webApp)'
+                    deployToSlotOrASE: true
+                    SlotName: 'stage'
+                    packageForLinux: '$(Pipeline.Workspace)/deployment/drop/**/*.zip'
+                    JSONFiles: 'appsettings.json'
+                    RuntimeStack: 'DOTNETCORE|8.0'
+
+                - task: AzureAppServiceManage@0
+                  displayName: Swap Deployment Slots
+                  inputs:
+                    azureSubscription: $(azureConnection)
+                    WebAppName: $(webApp)
+                    Action: Swap Slots
+                    ResourceGroupName: $(resourceGroup)
+                    SourceSlot: stage
+                    SwapWithProduction: true
