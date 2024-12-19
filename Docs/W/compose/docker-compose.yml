@@ -1,0 +1,146 @@
+networks:
+  default:
+    name: devops
+    external: true
+services:
+  windows-01:
+    container_name: trygcloud-windows-01
+    restart: unless-stopped
+    # init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_POOL=${AZP_POOL}
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-01
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-02:
+    container_name: trygcloud-windows-02
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-02
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-03:
+    container_name: trygcloud-windows-03
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-03
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine      
+  windows-04:
+    container_name: trygcloud-windows-04
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-04
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-05:
+    container_name: trygcloud-windows-05
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-05
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-06:
+    container_name: trygcloud-windows-06
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-06
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-07:
+    container_name: trygcloud-windows-07
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-07
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-08:
+    container_name: trygcloud-windows-08
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-08
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-09:
+    container_name: trygcloud-windows-09
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-09
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+  windows-10:
+    container_name: trygcloud-windows-10
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-windows-10
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+    volumes:
+      - \\.\pipe\docker_engine:\\.\pipe\docker_engine
+                                          

@@ -1,0 +1,82 @@
+trigger:
+  branches:
+    include:
+    - refs/heads/main
+
+schedules:
+- cron: 0 22 * * *
+  branches:
+    include:
+    - refs/heads/main
+  always: true
+
+
+jobs:
+- job: Phase_1
+  displayName: CI-CD
+  timeoutInMinutes: 720
+  cancelTimeoutInMinutes: 1
+  strategy:
+    matrix:
+      SS04:
+        AZP_AGENT_PREFIX: "SS04"
+      SS15:
+        AZP_AGENT_PREFIX: "SS15"
+    maxParallel: 2
+
+  pool:
+    name: Trygg_Hansa-Containerbuilder
+    demands:
+    - Agent.OS -equals Windows_NT
+    - Agent.Name -equals $(AZP_AGENT_PREFIX)PAZUREAGENT
+  steps:
+  - checkout: self
+    clean: true
+  - task: Docker@2
+    displayName: Image Prune
+    inputs:
+      command: image
+      arguments: prune -a --force --filter "until=72h"
+  - task: Docker@2
+    displayName: build
+    inputs:
+      repository: azure-build-agent-windows
+      command: build
+      arguments: --pull --no-cache
+  - task: replacetokens@5
+    displayName: Replace tokens in .env
+    inputs:
+      rootDirectory: ./compose
+      targetFiles: .env
+      tokenPattern: azpipelines
+      actionOnMissing: fail
+      actionOnNoFiles: fail
+      inlineVariables: >
+        System.TeamFoundationCollectionUri: $(System.TeamFoundationCollectionUri)
+
+        System.AccessToken: $(System.AccessToken)
+
+        Build.BuildId: $(Build.BuildId)
+
+        AZP_AGENT_PREFIX: $(AZP_AGENT_PREFIX)
+  - task: PowerShell@2
+    displayName: Create devops network
+    inputs:
+      targetType: inline
+      script: >-
+        $hasNetwork = (docker network ls --filter name=^devops -q).count -gt 0;
+        if(-NOT $hasNetwork){
+            & docker network create devops --driver nat;
+        }
+  - task: DockerCompose@0
+    displayName: Run a Docker Compose command
+    inputs:
+      containerregistrytype: Container Registry
+      dockerComposeCommand: '-p trygcloud up -d --remove-orphans'
+      cwd: compose
+  - task: Docker@2
+    displayName: System Prune
+    inputs:
+      command: system
+      arguments: prune -f
+...

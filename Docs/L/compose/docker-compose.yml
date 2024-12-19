@@ -1,0 +1,192 @@
+services:
+  linux-01:
+    container_name: trygcloud-linux-01
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_POOL=${AZP_POOL}
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-01
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"
+  linux-02:
+    container_name: trygcloud-linux-02
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-02
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-03:
+    container_name: trygcloud-linux-03
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-03
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock      
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-04:
+    container_name: trygcloud-linux-04
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-04
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-05:
+    container_name: trygcloud-linux-05
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-05
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-06:
+    container_name: trygcloud-linux-06
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-06
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-07:
+    container_name: trygcloud-linux-07
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-07
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-08:
+    container_name: trygcloud-linux-08
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-08
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-09:
+    container_name: trygcloud-linux-09
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-09
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+  linux-10:
+    container_name: trygcloud-linux-10
+    restart: unless-stopped
+    init: true
+    image: ${IMAGE}
+    environment:
+      - AZP_AGENT_NAME=${AZP_AGENT_PREFIX}_trygcloud-linux-10
+      - AZP_URL=${AZP_URL}
+      - AZP_TOKEN=${AZP_TOKEN}
+      - AZP_POOL=${AZP_POOL}
+      - IMAGE=${IMAGE}
+      - ZONE=${ZONE}
+      - LANG=${LANGUAGE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "www.nuget.org:0.0.0.0"
+      - "api.nuget.org:0.0.0.0"
+      - "registry.npmjs.org:0.0.0.0"      
+                                          

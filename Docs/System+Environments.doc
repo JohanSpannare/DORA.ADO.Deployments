@@ -1,0 +1,718 @@
+Date: Thu, 19 Dec 2024 08:33:26 +0000 (UTC)
+Message-ID: <1440135522.7.1734597206852@fb175ddda8b3>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_6_281138443.1734597206852"
+
+------=_Part_6_281138443.1734597206852
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>System Environments</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>System Environments</h1>
+    <div class=3D"Section1">
+        <div class=3D"table-wrap">
+<style>[data-colorid=3Dmbv52un1x2]{color:#36b37e} html[data-color-mode=3Dda=
+rk] [data-colorid=3Dmbv52un1x2]{color:#4cc994}[data-colorid=3Dco28iky07r]{c=
+olor:#ff5630} html[data-color-mode=3Ddark] [data-colorid=3Dco28iky07r]{colo=
+r:#cf2600}[data-colorid=3Duaorvjvhsv]{color:#ffc400} html[data-color-mode=
+=3Ddark] [data-colorid=3Duaorvjvhsv]{color:#ffc400}[data-colorid=3Dz0umbgke=
+0l]{color:#ff991f} html[data-color-mode=3Ddark] [data-colorid=3Dz0umbgke0l]=
+{color:#e07a00}</style>
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"30=
+e74ef1-05ff-4959-87eb-720e96522e57" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 117.0px;">
+<col style=3D"width: 166.0px;">
+<col style=3D"width: 477.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th data-highlight-colour=3D"#b3bac5" class=3D"confluenceTh">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-light-on" =
+data-emoji-id=3D"atlassian-light_bulb_on" data-emoji-shortname=3D":light_bu=
+lb_on:" data-emoji-fallback=3D":light_bulb_on:" src=3D"2edb4c572a01cc340e60=
+9ee34410cf8a5f4ed0c25820aa29540dabcfe32588e3" width=3D"16" height=3D"16" da=
+ta-emoticon-name=3D"light-on" alt=3D"(lightbulb)"></p></th>
+<th data-highlight-colour=3D"#b3bac5" colspan=3D"2" class=3D"confluenceTh">
+<p><strong><span class=3D"legacy-color-text-inverse">Developer Experience =
+=C2=BB Explanation</span></strong></p></th>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p style=3D"text-align: center;"><strong>Status</strong></p></td>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p style=3D"text-align: center;"><strong>Last Reviewed</strong></p></td>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><strong>Owner(s)</strong></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><span class=3D"status-macro aui-lozenge au=
+i-lozenge-success">PUBLISHED</span></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><time datetime=3D"2024-09-09" class=3D"dat=
+e-past">09 Sep 2024</time></p></td>
+<td class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584898991=
+/Dictionary#Developer-Experience-Working-Group" rel=3D"nofollow">Developer =
+Experience Working Group</a></p></td>
+</tr>
+<tr>
+<td colspan=3D"3" class=3D"confluenceTd">
+<p><strong>Summary:</strong> An explanation on how we reason about differen=
+t categories/types of system environments at Trygg-Hansa =E2=80=93 <code>de=
+v</code>, <code>test</code>, <code>preprod</code> and <code>prod</code>.</p=
+></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The document outlines the <em>four primary environments</em> types at Tr=
+ygg-Hansa:</p>
+<ul>
+<li>
+<p>The <code>dev</code> environment(s) =E2=80=93 primarily used for pair or=
+ mob programming and used exclusively by the software delivery team.</p></l=
+i>
+<li>
+<p>The <code>test</code> environment(s) =E2=80=93 used for testing changes =
+made to the system together with <em>other dependent systems</em>.</p></li>
+<li>
+<p>The <code>preprod</code> environment =E2=80=93 where the real production=
+ environment is simulated as close as possible.</p></li>
+<li>
+<p>The <code>prod</code> environment =E2=80=93 which hosts the live, operat=
+ional software.</p></li>
+</ul>
+<p>This means that each team can have one or more <code>dev</code> environm=
+ents and they are responsible for maintaining at least two environments use=
+d by other teams =E2=80=93 <code>test</code> and <code>preprod</code> =E2=
+=80=93 used for testing the software. The are also responsible for the <cod=
+e>prod</code> environment.</p>
+<p>The following matrix is divided into sections <em>(with links to additio=
+nal information/explanations)</em>:</p>
+<ol start=3D"1">
+<li>
+<p><strong>Overview</strong> =E2=80=93 the purpose of the environment.</p><=
+/li>
+<li>
+<p><strong>Technical Requirements</strong> =E2=80=93 performance and up-tim=
+e requirements.</p></li>
+<li>
+<p><strong>Test / Production Data</strong> =E2=80=93 how synthetic, anonymi=
+zed and production data is utilized.</p></li>
+</ol>
+<p><em>In the future additional sections can be added to explain how the va=
+rious types of environments are utilized.</em></p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"4a=
+b31a96-0e02-4e2e-861f-43a3b66db635" class=3D"confluenceTable">
+<tbody>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><strong>Overview</strong></p></td>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584768070=
+/System+Environments#dev" rel=3D"nofollow"><strong>dev</strong></a></p></td=
+>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584768070=
+/System+Environments#test" rel=3D"nofollow"><strong>test</strong></a></p></=
+td>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584768070=
+/System+Environments#preprod" rel=3D"nofollow"><strong>preprod</strong></a>=
+</p></td>
+<td data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584768070=
+/System+Environments#prod" rel=3D"nofollow"><strong>prod</strong></a></p></=
+td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p><strong>Purpose</strong></p></td>
+<td class=3D"confluenceTd">
+<p>=E2=80=9CLocal=E2=80=9D Development</p>
+<p>CI/CD</p>
+<p>Various Other Purposes</p></td>
+<td class=3D"confluenceTd">
+<p>User Story Testing</p>
+<p>Integration Testing (Internal)</p>
+<p>Security Testing</p></td>
+<td class=3D"confluenceTd">
+<p>Acceptance Testing</p>
+<p>Integration Testing (Internal / External)</p>
+<p>Performance Testing</p>
+<p>User Training</p>
+<p>Scheduled Batch Testing</p>
+<p>Alarm/Operational Insights Testing</p></td>
+<td class=3D"confluenceTd">
+<p>Production</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" colspan=3D"5" class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584768070=
+/System+Environments#Technical-Requirements" rel=3D"nofollow"><strong>Techn=
+ical Requirements</strong></a></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p><strong>Performance</strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><strong><span data-colorid=3D"mbv52un1x2">=
+Low</span></strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><strong><span data-colorid=3D"uaorvjvhsv">=
+Medium</span></strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><strong><span data-colorid=3D"z0umbgke0l">=
+High</span></strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><strong><span data-colorid=3D"co28iky07r">=
+Very High</span></strong></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p><strong>Up-Time</strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;">N/A</p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;">~90%</p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;">~95%</p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;">99,9%</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#f4f5f7" colspan=3D"5" class=3D"confluenceTd">
+<p><a href=3D"https://tryg01.atlassian.net/wiki/spaces/DEX/pages/4584768070=
+/System+Environments#Test-%2F-Production-Data" rel=3D"nofollow"><strong>Tes=
+t / Production Data</strong></a></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p><strong>Synthetic Data</strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-tick" data=
+-emoji-id=3D"atlassian-check_mark" data-emoji-shortname=3D":check_mark:" da=
+ta-emoji-fallback=3D":check_mark:" src=3D"c8f6f8f715c72934d6254a03c46546838=
+cc191f133463976e67d7f6bef8cbf46" width=3D"16" height=3D"16" data-emoticon-n=
+ame=3D"tick" alt=3D"(tick)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-tick" data=
+-emoji-id=3D"atlassian-check_mark" data-emoji-shortname=3D":check_mark:" da=
+ta-emoji-fallback=3D":check_mark:" src=3D"c8f6f8f715c72934d6254a03c46546838=
+cc191f133463976e67d7f6bef8cbf46" width=3D"16" height=3D"16" data-emoticon-n=
+ame=3D"tick" alt=3D"(tick)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-tick" data=
+-emoji-id=3D"atlassian-check_mark" data-emoji-shortname=3D":check_mark:" da=
+ta-emoji-fallback=3D":check_mark:" src=3D"c8f6f8f715c72934d6254a03c46546838=
+cc191f133463976e67d7f6bef8cbf46" width=3D"16" height=3D"16" data-emoticon-n=
+ame=3D"tick" alt=3D"(tick)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p><strong>Anonymized Data</strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-tick" data=
+-emoji-id=3D"atlassian-check_mark" data-emoji-shortname=3D":check_mark:" da=
+ta-emoji-fallback=3D":check_mark:" src=3D"c8f6f8f715c72934d6254a03c46546838=
+cc191f133463976e67d7f6bef8cbf46" width=3D"16" height=3D"16" data-emoticon-n=
+ame=3D"tick" alt=3D"(tick)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p><strong>Production Data</strong></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-tick" data=
+-emoji-id=3D"atlassian-check_mark" data-emoji-shortname=3D":check_mark:" da=
+ta-emoji-fallback=3D":check_mark:" src=3D"c8f6f8f715c72934d6254a03c46546838=
+cc191f133463976e67d7f6bef8cbf46" width=3D"16" height=3D"16" data-emoticon-n=
+ame=3D"tick" alt=3D"(tick)"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"61=
+333a57-c46c-4d9a-a948-fa5042dfbce9" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 151.0px;">
+<col style=3D"width: 609.0px;">
+</colgroup>
+<tbody>
+<tr>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-tick" data=
+-emoji-id=3D"atlassian-check_mark" data-emoji-shortname=3D":check_mark:" da=
+ta-emoji-fallback=3D":check_mark:" src=3D"c8f6f8f715c72934d6254a03c46546838=
+cc191f133463976e67d7f6bef8cbf46" width=3D"16" height=3D"16" data-emoticon-n=
+ame=3D"tick" alt=3D"(tick)"></p></td>
+<td class=3D"confluenceTd">
+<p>Allowed / The General Use Case</p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p style=3D"text-align: center;"><img class=3D"emoticon emoticon-blue-star"=
+ data-emoji-id=3D"1f6ab" data-emoji-shortname=3D":no_entry_sign:" data-emoj=
+i-fallback=3D"=F0=9F=9A=AB" src=3D"4c611d65bf723d2b7efbb51e966124f461bfe3c3=
+68389d4f7f248b0ed8ad1bbf" width=3D"16" height=3D"16" data-emoticon-name=3D"=
+blue-star" alt=3D"(blue star)"></p></td>
+<td class=3D"confluenceTd">
+<p>Not Allowed / <em>Not</em> the General Use Case</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id=3D"SystemEnvironments-dev">dev</h1>
+<p>The <code>dev</code>-environments for a particular system are under the =
+complete control of <em>one</em> software delivery team. Other teams <em>sh=
+ould not</em> be relying on any system in this environment category. If nee=
+ded other internal systems should be =E2=80=9Cmocked=E2=80=9D.</p>
+<p>The environments in this category are the =E2=80=9C<strong>Local=E2=80=
+=9D Development</strong> environment (a corporate client laptop, a shared s=
+erver environment or a cloud-based development client) where developers wri=
+te code (preferably using pair and mob programming techniques).</p>
+<p>This is also the environment where code is automatically and continuousl=
+y deployed using <strong>CI/CD</strong> pipelines =E2=80=93 so that the tea=
+m can test any changes done and make sure that the system as a whole is wor=
+king as expected.</p>
+<p>Teams which have the opportunity to utilize Infrastructure-as-Code (IaC)=
+ to deploy new environments by themselves can easily deploy multiple <code>=
+dev</code> environments for <strong>various other purposes</strong> =E2=80=
+=93 such as deploying topic/feature branches to a non-local environment to =
+demo new functionality to other team members and other stakeholders to get =
+feedback at a very early stage.</p>
+<div class=3D"confluence-information-macro confluence-information-macro-not=
+e">
+<span class=3D"aui-icon aui-icon-small aui-iconfont-warning confluence-info=
+rmation-macro-icon"></span>
+<div class=3D"confluence-information-macro-body">
+<p>All source code and build artifacts is the property of Trygg-Hansa. Stor=
+ing copies of this data on equipment <em>not</em> owned and managed by Tryg=
+g-Hansa is not allowed. Read more in the How-To Guide <a href=3D"/wiki/spac=
+es/DEX/pages/4605247517/Securing+Developer+Devices" data-linked-resource-id=
+=3D"4605247517" data-linked-resource-version=3D"2" data-linked-resource-typ=
+e=3D"page">Securing Developer Devices</a>.</p>
+</div>
+</div>
+<h1 id=3D"SystemEnvironments-test">test</h1>
+<p>Each system should provide at least one stable <code>test</code> environ=
+ment which other teams can utilize for <em>their </em>respective <code>test=
+</code> environments. Any changes to the system which could lead to breakin=
+g changes in dependent systems need to be carefully coordinated. If technic=
+ally possible the team should consider using Infrastructure-as-Code (IaC) t=
+o quickly build additional <code>test</code> environments where topic/featu=
+re branches can be deployed without the risk of affecting dependent systems=
+.</p>
+<p>The test environment(s) can be used for initial testing of user stories =
+as well as internal integration testing (for example to ensure that new fun=
+ctionality affecting multiple systems is working as expected). Going forwar=
+d this environment can also be utilized for initial automated security test=
+ing of running software.</p>
+<h1 id=3D"SystemEnvironments-preprod">preprod</h1>
+<p>The <code>preprod</code>-environment is the =E2=80=9Clast stop=E2=80=9D =
+before going to <code>prod</code>. Deployments to this environment is gener=
+ally more coordinated that deployments to =E2=80=9Clower=E2=80=9D environme=
+nts. This environment is built to be as close to <code>prod</code> as possi=
+ble (without using production data).</p>
+<p>This environment is used to ensure that internal and external integratio=
+ns as well as more "lengthy" processes are running as expected before relea=
+sing to <code>prod</code>. It is also used for final acceptance testing of =
+new and updated features. Because this environment should contain a larger =
+set of data it can also be used for performance testing to ensure that chan=
+ges do not have and adverse effect on the overall performance of all system=
+s. And an additional use case could be internal user training.</p>
+<h1 id=3D"SystemEnvironments-prod">prod</h1>
+<p>The <code>prod</code>-environment is the live production environment whi=
+ch our customers and partners utilize when doing business with us.</p>
+<p></p>
+<hr>
+<h1 id=3D"SystemEnvironments-TechnicalRequirements">Technical Requirements<=
+/h1>
+<h2 id=3D"SystemEnvironments-Performance/Up-Time">Performance / Up-Time</h2=
+>
+<ul>
+<li>
+<p><strong>dev</strong> =E2=80=93 Because the <code>dev</code> environment(=
+s) are only used by the individual team responsible for the system there ar=
+e only low requirements on performance and no requirements on up-time for o=
+ther teams. Changes only need to be coordinated at the team level.</p></li>
+<li>
+<p><strong>test</strong> =E2=80=93 Because the primary environment in the <=
+code>test</code> environment category might be used by other teams =E2=80=
+=93 and they rely on this environment when testing <em>their</em> systems =
+=E2=80=93 the performance and up-time requirements on this system are highe=
+r than for the <code>dev</code> environments. Any changes to this environme=
+nt have to be coordinated (or otherwise established on an as-a-rule-basis) =
+to ensure minimal impact to systems being developed by other teams.</p></li=
+>
+<li>
+<p><strong>preprod</strong> =E2=80=93 Because the <code>preprod</code> envi=
+ronment is the =E2=80=9Clast stop=E2=80=9D before <code>prod</code> it is v=
+ital that performance is sufficient and that up-time requirements are almos=
+t as high as <code>prod</code> to ensure that any changes or new functional=
+ity is tested in an environment as close to production as possible. Changes=
+ to this environment have to be carefully coordinated.</p></li>
+<li>
+<p><strong>prod</strong> =E2=80=93 The <code>prod</code> environment will n=
+aturally have very high performance and up-time requirements.</p></li>
+</ul>
+<p></p>
+<hr>
+<h1 id=3D"SystemEnvironments-Test/ProductionData">Test / Production Data</h=
+1>
+<p>Test Data Management is vital. Each team needs to consider how to manage=
+ test data used in their system and <em>automate</em> the setup of this dat=
+a as much as possible. This is vital to make it possible to quickly spin up=
+ new environments with an adequate set of test data and to avoid the very t=
+ime-consuming task of manually creating test data.</p>
+<ul>
+<li>
+<p><strong>Synthetic Data</strong> is used in all environments <em>except</=
+em> <code>prod</code>. In the <code>preprod</code> environment synthetic da=
+ta is used in conjunction with anonymized data.</p></li>
+<li>
+<p><strong>Anonymized Data</strong> is only used in the <code>preprod</code=
+> environment.</p></li>
+<li>
+<p><strong>Production Data</strong> should <em>only</em> be used in <code>p=
+rod</code>, <em>never</em> in any other environment.</p></li>
+</ul>
+<p></p>
+<hr>
+    </div>
+</body>
+</html>
+------=_Part_6_281138443.1734597206852
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/c8f6f8f715c72934d6254a03c46546838cc191f133463976e67d7f6bef8cbf46
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlz
+AABuugAAbroB1t6xFwAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1s
+bnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpS
+REYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMj
+Ij4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6
+dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmll
+bnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAg
+PC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAArRJREFUOBGVU89LVFEU/u69b37p6MykZpoY
+I0VZEgm6CGoxi0L/gDCmhQtBGGzTJiiMDCJbtKtW0SL6vShaRLXILLCFVEg/FkWlCFJGjT9mxvS9
+effezr0zDrjswp2577z3nfOd736HwayREU5b2fP5o10QfACMpaB10sYYm6HzOKS6juF7b22sjGEb
+wBfSVxAQQ7SBogR82mY59LweK8qrOH3nuI1TEmYP5mf02FNEQz0orBkmBinoJdd0iDOu6oUjZ/2i
+KEZDHAX3GU7d7qVXoNS0TOWacJrALhiccpzwGgkmsOSvsoWlr0KFYgj5ypPR8C4cbG/A2McnDKbn
+UOAN0VUEZoSpsEowjkU3j77mDvR39eDcq7uYXPmtIzyoVx3O4Ra7uRWM+iOUNGADauGGBJDgRNDN
+YvhwP3r3HUBTdZx08ViEc2k1IbE5IVNGMOpVxGzFHOYKP7DbCWM6N4czXWl0tO7Ai0+TeDQ9jrZI
+AgtKCisyYR1CJo3atYzzZa+AgW3daE004uy7B0AwikzqCDzp48TYDaCqGVnlG3K8fEPJEleKbCba
+ucIs+jpP4tDe/fD8Ippr6tAUr8eticf4MD+F7Zva8U26JkFlMVxMf4YQO2ukVnnp8c7qOjwfGEVt
+VZSKSORWC2i8PIiYCGOFYKZZaleRNzik/MLpadwIktdKbqW+pxa+I3P/EpTWCAeCuPbyIbC2iLhw
+4JfApnpJRMIKpPb8ItsOMqVZTku0hRNsYv49eM5FNreIzOubqK9qwE9VdqW5aNirZiRkpnTnJSMN
+MTISEQy28ACb+/sH8JZRF0siq0tjQjDD30M0HEJ+zVq6Ypp1K1MSRSXkFu6ICN3MjPQM5Yq9CbzB
+ymYKufnCepuyaiNOJBiY53odbIbJxuy/qVyeA4MtMSiPpk30n+P8D1M+Ld4+I3biAAAAAElFTkSu
+QmCC
+------=_Part_6_281138443.1734597206852
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/2edb4c572a01cc340e609ee34410cf8a5f4ed0c25820aa29540dabcfe32588e3
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlz
+AABuugAAbroB1t6xFwAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1s
+bnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpS
+REYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMj
+Ij4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6
+dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmll
+bnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAg
+PC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAmhJREFUOBFlUktrE1EU/s68krRpGqlpsbUi
+4kIohYgg+BMEV8V0UxC6UDeCrtyVTNyIgoLuxIW4NT52Li0+VqLYVcA3mr5U2kiqmbHJ3Os5dyaj
+4jdc7sc533fm3nMPkED7vpXyZm1ON2tPdNP/ES/htbk0/5eWJKi1JgZvmrBSu4sdAzMIe0DQjT05
+F8g6QKtzHxPV432t7MlfZ+N9+cJNlPIz2Ax+obMdSW2zhEtMcqIxiD2k71Rsmq1Hetkvw7VfYVuJ
+kQvyaf4BSTEFz7LRjQ7Sbn9JvBYqU7FQ4RgGPLGo/80SNgWV0YhWwN60cbBonJvRF7JeeIKUcxHh
+ok3wp4Cmz5xgI3/Eu8ON60O4xCRnNKxNIAX4yAK6h1agYFsutgONT0scMyeC4RKTXCuI4FHdWNhr
+EflKL/oOTS685eNdRTHHR7R6WHsAvH4cL+ESkxzhEo0tvNeaPezlc8l1+3Nww9XN1QYNZPfrrbam
+pVuc52uX5zUVCoSfQQOTNG1+KhfllOmBGYwXp1yi011y7Bpszg4VQ4yWFUrTigbzIYiHiuiiMRut
+uR94vGLUP7RMLx49U2/I7sDzPJ1Th1Umm9HuuwK5jtXRnvPcqA+Ny6wYpAUajSnuWB1r61gd3ln4
+HnZR/NKNdMR1aWXT5eptomw7tlVZ6xuaPmM1ziDQW2NBp50Lww5c9JDPkCqN5DE86H2cnT+/LjK5
+ciKXkY1Bvq8W+TVOnr3ycu+eictTB/ahMJTvWbate70IG62tjQoqdl+e+vpEdi4bjwvzpw+vn/j2
+tXWNHwG7RkfOHTl65rbRJN0XLvgNAygYQRhYhLgAAAAASUVORK5CYII=
+------=_Part_6_281138443.1734597206852
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/4c611d65bf723d2b7efbb51e966124f461bfe3c368389d4f7f248b0ed8ad1bbf
+
+iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAAAM1BMVEVHcEzdLkTdLkTdLkTdLkTd
+LkTdLkTdLkTdLkTdLkTdLkTdLkTdLkTdLkTdLkTdLkTdLkQVM82yAAAAEHRSTlMAUN+/YECAn+8g
+j8+vEDBweI+d3gAAAdVJREFUeF61mOuOxCAIhanFir0N7/+0m8xOsif2gmcnPb/brxyqKMiNqs5j
+8o/SOGsVXjKU5AelMnCUOptfyOb+uPLqt1pzXzTFQ5WOqCbzDtkUhbN4p5bboAbzbtlwY8spXdor
+Tqr0c8ZJ81s6jRekmGPtMh6KHUhxfpJucpSmKE9DE81LLqRNVE3U1W7No7biKKuCWq7Mx0EtTYIY
+0m5NmsAYR6rLubnizpLs7MHcEGh3+QNanSeJAmj9GGY30/Hzv1macVf0kzYwN79B4PYlBAnMWbM5
+kghDSrhR8E1XoUiKDyHXNuFIhl4qYoUioZkqikY5EqZX8eeLsCRcAH+leBSahC8nKAc0aYJso02W
+hAkGUBaalANQTIpBMSkG7RKSWGsxKQbFpBikQpMUQLggaRIuSFzlNAlfxk1Lk3DTYhlhSVhGmsJG
+kNrChqVWONJmV8eGciQFcnscUaTUpNcgJIb0wgOyPbI3gnQ4smvrnb/P1+O9Qv9DWk8uWrbzJM9n
+9q3SpHJ+I1xYEn568i/cTZcXdqMyvty1EKV7PaExrAhxUK+2qYnbLDlqC9qsLxo/rhXdg1b0qeaY
+b9efHSDwI41Hhyz82OfhQRQ/Gnt+WPf9+PAH9OKfPpdWVdIAAAAASUVORK5CYII=
+------=_Part_6_281138443.1734597206852--
